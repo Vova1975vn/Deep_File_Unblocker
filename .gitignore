@@ -1,0 +1,18 @@
+# PyCharm files
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyInstaller folders and files
+build/
+dist/
+*.spec
+
+# Log files
+*.log
+
+# Windows Installer Output
+Output/
+*.exe
