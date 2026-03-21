@@ -1,5 +1,9 @@
 # 🔓 Deep File Unblocker & Permission Fixer
 
+[![Downloads](https://img.shields.io/github/downloads/Vova1975vn/Deep_File_Unblocker/total.svg)](https://github.com/Vova1975vn/Deep_File_Unblocker/releases)
+
+A powerful, multithreaded Windows utility designed to instantly fix restricted file permissions...
+
 [![Build](https://img.shields.io/github/actions/workflow/status/Vova1975vn/Deep_File_Unblocker/build.yml?label=build)](https://github.com/Vova1975vn/Deep_File_Unblocker/actions)
 [![Latest Release](https://img.shields.io/github/v/release/Vova1975vn/Deep_File_Unblocker?label=version)](https://github.com/Vova1975vn/Deep_File_Unblocker/releases)
 [![Downloads](https://img.shields.io/github/downloads/Vova1975vn/Deep_File_Unblocker/total?label=downloads)](https://github.com/Vova1975vn/Deep_File_Unblocker/releases)
