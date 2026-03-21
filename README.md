@@ -1,5 +1,6 @@
 # 🔓 Deep File Unblocker & Permission Fixer
 
+Compatibility: 🪟 Windows Only (Requires NTFS file system).
 A powerful, multithreaded Windows utility designed to instantly fix restricted file permissions...
 
 [![Latest Release](https://img.shields.io/github/v/release/Vova1975vn/Deep_File_Unblocker?label=version)](https://github.com/Vova1975vn/Deep_File_Unblocker/releases)
