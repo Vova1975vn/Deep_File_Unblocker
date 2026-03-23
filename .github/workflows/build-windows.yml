@@ -26,7 +26,7 @@ jobs:
     - name: Compile Inno Setup Installer
       # This runs the pre-installed Inno Setup compiler in the cloud
       run: |
-        "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" Unblocker_Installer_Script.iss
+        iscc Unblocker_Installer_Script.iss
 
     - name: Upload the final Setup Wizard
       uses: actions/upload-artifact@v4
