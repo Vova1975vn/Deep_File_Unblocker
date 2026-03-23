@@ -1,0 +1,33 @@
+name: Build Windows EXE
+
+# This tells GitHub to run this script every time you push code to the "main" branch
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # CRITICAL: This tells GitHub to use a Windows computer, not Linux!
+    runs-on: windows-latest
+
+    steps:
+    - name: Download code from repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11' # You can change this to match your Python version
+
+    - name: Install PyInstaller
+      run: python -m pip install --upgrade pip pyinstaller
+
+    - name: Build EXE with PyInstaller
+      # Note: Update 'UnblockerApp_v2.py' if your main Python file is named differently
+      run: pyinstaller --noconsole --onefile --uac-admin UnblockerApp_v2.py
+
+    - name: Upload the finished EXE
+      uses: actions/upload-artifact@v4
+      with:
+        name: Deep-File-Unblocker-EXE
+        path: dist/UnblockerApp_v2.exe
