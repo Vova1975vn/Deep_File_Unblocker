@@ -1,13 +1,11 @@
-name: Build Windows EXE
+name: Build Windows EXE and Installer
 
-# This tells GitHub to run this script every time you push code to the "main" branch
 on:
   push:
     branches: [ "main" ]
 
 jobs:
   build:
-    # CRITICAL: This tells GitHub to use a Windows computer, not Linux!
     runs-on: windows-latest
 
     steps:
@@ -17,17 +15,22 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11' # You can change this to match your Python version
+        python-version: '3.11'
 
     - name: Install PyInstaller
       run: python -m pip install --upgrade pip pyinstaller
 
     - name: Build EXE with PyInstaller
-      # Note: Update 'UnblockerApp_v2.py' if your main Python file is named differently
       run: pyinstaller --noconsole --onefile --uac-admin UnblockerApp_v2.py
 
-    - name: Upload the finished EXE
+    - name: Compile Inno Setup Installer
+      # This runs the pre-installed Inno Setup compiler in the cloud
+      run: |
+        "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" Unblocker_Installer_Script.iss
+
+    - name: Upload the final Setup Wizard
       uses: actions/upload-artifact@v4
       with:
-        name: Deep-File-Unblocker-EXE
-        path: dist/UnblockerApp_v2.exe
+        name: Deep-File-Unblocker-Installer
+        # Inno Setup automatically places the compiled installer in an 'Output' folder
+        path: Output\*.exe
